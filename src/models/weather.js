@@ -29,8 +29,8 @@ const getWeather = (des) =>{
 };
 
 export default {
-    namespace: 'weather',
-
+    // namespace: 'weather',
+    //Define the state of the global model
     state: {
         data: {
             Sydney: {
@@ -70,9 +70,10 @@ export default {
                             current_temp = raw_data.data[0]['app_temp'];
                             current_weather = getWeather(raw_data.data[0].weather.description);
 
-                            yield put({type:'changeCity', payload:{name: city,
-                                    temp: current_temp,
-                                    weather: current_weather}});
+                            yield put({type:'changeCity',
+                                        payload:{name: city,
+                                            temp: current_temp,
+                                            weather: current_weather}});
                             break;
                         case 'Melbourne':
                             city = 'Brisbane';
