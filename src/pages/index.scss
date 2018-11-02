@@ -1,0 +1,25 @@
+@import '../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/_functions.scss';
+
+h1,h2 {
+    font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+    h1,h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    h1,h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    h1,h2 {
+        font-size: 1.6rem;
+    }
+}
