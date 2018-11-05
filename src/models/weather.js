@@ -10,7 +10,13 @@ const request = async (url, options) => {
 const raw_url_forecast = 'https://weatherbit-v1-mashape.p.mashape.com/forecast/3hourly?';
 const raw_url_current = 'https://weatherbit-v1-mashape.p.mashape.com/current?';
 
-const appkey = {"X-Mashape-Key": "wSo0LRcHZMmsh4rXshasAImNK7Ulp19zkGQjsnUjeMXsnpyilC"};
+// API Keys: dcc4b6b981d645cdbbcce5808f63ff2e
+// 1d7583124ae44dc893ece937dbe92657
+// b2WygrPsbSmshk0yYfydmcw3GQGvp13dzLrjsnuTmLkzvqJw6t
+// m3Y07H9Qoqmshzl2MUEzAEZkBF0Up1esPEHjsn7UcXrXpMGab1
+const appkey = {
+                "X-Mashape-Key": "dcc4b6b981d645cdbbcce5808f63ff2e",
+                "Accept": "application/json"};
 
 let urls_current = [
   raw_url_current + 'lat=-33.8688' + '&lon=151.2093',
