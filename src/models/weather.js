@@ -7,16 +7,22 @@ const request = async (url, options) => {
     return res.json();
 };
 
-const raw_url_forecast = 'https://weatherbit-v1-mashape.p.mashape.com/forecast/3hourly?';
-const raw_url_current = 'https://weatherbit-v1-mashape.p.mashape.com/current?';
+// const raw_url_forecast = 'https://weatherbit-v1-mashape.p.mashape.com/forecast/3hourly?';
+// const raw_url_current = 'https://weatherbit-v1-mashape.p.mashape.com/current?';
+
+const api_key = 'dcc4b6b981d645cdbbcce5808f63ff2e';
+const raw_url_forecast = 'http://api.weatherbit.io/v2.0/forecast/3hourly?'+'key=' + api_key+'&';
+const raw_url_current = 'http://api.weatherbit.io/v2.0/current?'+'key=' + api_key + '&';
 
 // API Keys: dcc4b6b981d645cdbbcce5808f63ff2e
 // 1d7583124ae44dc893ece937dbe92657
 // b2WygrPsbSmshk0yYfydmcw3GQGvp13dzLrjsnuTmLkzvqJw6t
 // m3Y07H9Qoqmshzl2MUEzAEZkBF0Up1esPEHjsn7UcXrXpMGab1
-const appkey = {
-                "X-Mashape-Key": "dcc4b6b981d645cdbbcce5808f63ff2e",
-                "Accept": "application/json"};
+// const appkey = {
+//                 "X-Mashape-Key": "dcc4b6b981d645cdbbcce5808f63ff2e",
+//                 "Accept": "application/json"};
+
+const api_header = {"Accept": "application/json"};
 
 let urls_current = [
   raw_url_current + 'lat=-33.8688' + '&lon=151.2093',
@@ -133,8 +139,8 @@ export default {
             let current_temp, current_weather, raw_data_current, raw_data_forecast, today_min_max, tmp_id, forecast_res, today;
             switch (pld.action){
                 case 'current':
-                    raw_data_current = yield call(request, urls_current[pld.curCityID], {headers:appkey});
-                    raw_data_forecast = yield call(request, urls_forecast[pld.curCityID], {headers:appkey});
+                    raw_data_current = yield call(request, urls_current[pld.curCityID], {headers:api_header});
+                    raw_data_forecast = yield call(request, urls_forecast[pld.curCityID], {headers:api_header});
 
                     today = raw_data_current.data[0].datetime.split(":",1)[0];
                     current_temp = getCurrentTemp(raw_data_current);
@@ -159,8 +165,8 @@ export default {
                     tmp_id = pld.curCityID - 1;
                     if (tmp_id < 0) tmp_id += urls_current.length;
 
-                    raw_data_current = yield call(request, urls_current[tmp_id], {headers:appkey});
-                    raw_data_forecast = yield call(request, urls_forecast[tmp_id], {headers:appkey});
+                    raw_data_current = yield call(request, urls_current[tmp_id], {headers:api_header});
+                    raw_data_forecast = yield call(request, urls_forecast[tmp_id], {headers:api_header});
 
                     today = raw_data_current.data[0].datetime.split(":",1)[0];
                     current_temp = getCurrentTemp(raw_data_current);
@@ -183,8 +189,8 @@ export default {
                     break;
                 case 'next':
                     tmp_id = (pld.curCityID + 1) % urls_current.length;
-                    raw_data_current = yield call(request, urls_current[tmp_id], {headers:appkey});
-                    raw_data_forecast = yield call(request, urls_forecast[tmp_id], {headers:appkey});
+                    raw_data_current = yield call(request, urls_current[tmp_id], {headers:api_header});
+                    raw_data_forecast = yield call(request, urls_forecast[tmp_id], {headers:api_header});
 
                     today = raw_data_current.data[0].datetime.split(":",1)[0];
                     current_temp = getCurrentTemp(raw_data_current);
