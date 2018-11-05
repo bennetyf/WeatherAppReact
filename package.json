@@ -5,7 +5,8 @@
     "bootstrap": "^4.1.3",
     "react": "latest",
     "immer": "latest",
-    "dva": "latest"
+    "dva": "latest",
+    "antd": "latest"
   },
   "scripts": {
     "dev": "umi dev",
