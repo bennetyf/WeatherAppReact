@@ -1,7 +1,7 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'font-awesome/css/font-awesome.min.css';
 // import 'mdbreact/dist/css/mdb.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {Component} from "react";
 import {Row, Col} from 'antd';
 
