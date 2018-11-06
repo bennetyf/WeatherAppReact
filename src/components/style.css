@@ -1,0 +1,48 @@
+/*
+Error: Invalid CSS after "    .date": expected "{", was "}"
+        on line 74 of style.scss
+
+69:     }
+70:     .temperature{
+71: 
+72:     }
+73:     .date
+74: }
+
+Backtrace:
+style.scss:74
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:1278:in `expected'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:1208:in `expected'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:1203:in `tok!'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:677:in `block'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:697:in `block_child'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:678:in `block'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:670:in `ruleset'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:696:in `block_child'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:137:in `stylesheet'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/scss/parser.rb:41:in `parse'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/engine.rb:414:in `_to_tree'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/exec/base.rb:52:in `parse'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/lib/sass/exec/base.rb:19:in `parse!'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/gems/sass-3.5.5/bin/scss:13:in `<top (required)>'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/bin/scss:23:in `load'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/bin/scss:23:in `<main>'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/bin/ruby_executable_hooks:15:in `eval'
+/home/travis/Workspace/Apps/rvm/gems/ruby-2.5.0@git-blog/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"    .date\": expected \"{\", was \"}\"\A         on line 74 of style.scss\A \A 69:     }\A 70:     .temperature{\A 71: \A 72:     }\A 73:     .date\A 74: }"; }
