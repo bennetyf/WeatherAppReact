@@ -2,10 +2,11 @@ import {Col, Row} from "antd";
 import {Arrow} from "./Arrow";
 import {CurrentWeather} from "./CurrentWeather";
 import React from "react";
+import style from './style.scss';
 
 export const UpperComponent = (props) => {
     return(
-            <div style={{margin: `1.5rem 3rem`, paddingBottom: `2rem`, borderBottom: `0.2rem solid rgba(255,255,255,0.3)`}}>
+            <div className={style.upper_component}>
                 <Row type="flex" align="center" justify="space-between">
                     <Col span={3}>
                         <Arrow

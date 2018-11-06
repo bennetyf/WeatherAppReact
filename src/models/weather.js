@@ -63,6 +63,8 @@ const getLowAndHigh = (raw, today, current_temp, current_weather) =>{
           }
       }
   });
+
+  console.log(today, min_temp, max_temp);
   return {lowest_temp: min_temp, highest_temp: max_temp, lowest_weather: min_weather, highest_weather: max_weather};
 };
 
@@ -147,7 +149,7 @@ export default {
                     current_weather = getWeather(raw_data_current);
                     today_min_max = getLowAndHigh(raw_data_forecast, today, current_temp, current_weather);
                     forecast_res = getForecast(raw_data_forecast, today);
-                    // console.log(forecast_res);
+                    console.log(raw_data_current);
                     yield put({type:'changeCity', payload:{
                             id: pld.curCityID,
                             data:{
@@ -173,7 +175,7 @@ export default {
                     current_weather = getWeather(raw_data_current);
                     today_min_max = getLowAndHigh(raw_data_forecast, today, current_temp, current_weather);
                     forecast_res = getForecast(raw_data_forecast, today);
-
+                    console.log(raw_data_forecast);
                     yield put({type:'changeCity', payload:{
                             id: tmp_id,
                             data:{
@@ -224,7 +226,6 @@ export default {
             return produce(state, (draft) => {  //produce from immerjs returns a new object and can be used as the new state.
                     draft.current = pld.id;
                     draft.data[pld.id] = pld.data;
-                    console.log(pld.data);
                     return draft;
                 }
             );

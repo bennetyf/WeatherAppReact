@@ -1,0 +1,11 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+.topmargin {
+  margin-top: 5rem;
+}
+
+.bgstyle {
+  @extend .h-100;
+  background: rgba(255,255,255,0) url('../../static/background.jpg') 0 0/100% 100% no-repeat;
+  background-blend-mode: multiply
+}
