@@ -7,8 +7,8 @@ import style from './style.scss';
 export const UpperComponent = (props) => {
     return(
             <div className={style.upper_component}>
-                <Row type="flex" align="center" justify="space-between">
-                    <Col span={3}>
+                <Row type='flex' align='center'>
+                    <Col span={3} className={style.center_arrow}>
                         <Arrow
                             direction={'left'}
                             cityId={props.cityID}
@@ -16,7 +16,7 @@ export const UpperComponent = (props) => {
                         />
                     </Col>
 
-                    <Col span={18}>
+                    <Col span={18} className={style.center_weather}>
                         <CurrentWeather
                             city={props.cityName}
                             weather={props.data.weather}
@@ -28,7 +28,7 @@ export const UpperComponent = (props) => {
                         />
                     </Col>
 
-                    <Col span={3}>
+                    <Col span={3} className={style.center_arrow}>
                         <Arrow
                             direction={'right'}
                             cityId={props.cityID}

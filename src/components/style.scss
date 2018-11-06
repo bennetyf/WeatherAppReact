@@ -1,65 +1,95 @@
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
+@mixin center_children {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .upper_component {
-    height: 65%;
-    @extend .mt-5,.mr-4,.ml-4;
+    height: 70%;
+    @extend .mt-2,.mr-3,.ml-3;
     padding-bottom: 2rem;
     border-bottom: 0.2rem solid rgba(255,255,255,0.3);
 
-    .arrow{
-        @extend .d-flex, .flex-column, .h-100, .align-items-center, .justify-content-center;
-    }
-
-    .main_cityname {
-        @extend .text-center, .text-white, .font-weight-bold, h1;
-    }
-
-    .main_image {
-        @extend .text-center, .mt-2, .embed-responsive;
+    .center_arrow{
+        //@extend .d-flex, .flex-column, .h-100, .align-items-center, .justify-content-center;
+        @include center_children;
         img{
-            width: 45%;
+            width: 100%;
         }
     }
 
-    .main_temperature{
-        @extend .text-center, .text-white, .mt-2, h3;
-    }
+    .center_weather {
+        @include center_children;
 
-    .secondary_temperature_box{
-        @extend .d-flex, .flex-row, .h-100, .align-items-center, .justify-content-between, .mt-5;
-        .box{
-            @extend .text-center, .flex-fill;
+        .main_cityname {
+            @extend .text-center, .text-white, .font-weight-bold, h1;
+            margin-top: 4rem;
         }
-        .temperature{
-            @extend .text-white, .mb-4, h6;
+
+        .main_image {
+            @extend .text-center, .mt-4, .embed-responsive, .w-100;
+            img {
+                width: 45%;
+            }
         }
-        .weather{
-            @extend .text-white, h6;
+
+        .main_temperature {
+            @extend .text-center, .text-white, .mt-4, h3;
+        }
+
+        .secondary_temperature_box {
+            //@extend .d-flex, .flex-row, .align-items-center, .justify-content-between, .mt-5;
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+            margin-top: 1rem;
+
+            .box {
+                @extend .text-center, .flex-fill;
+            }
+            .weather {
+                @extend .text-white, h6;
+            }
+            .temperature {
+                @extend .weather;
+                margin-top: 2rem;
+            }
+
         }
     }
 }
 
 .lower_component {
-    margin: 2rem 3rem;
-    padding: 0;
+    @extend .mt-3,.mr-3,.ml-3;
+    margin-bottom: 2rem;
+    height: 30%;
 
     .forecast_item_box{
-        @extend .d-flex, .flex-column, .align-items-center, .justify-content-start, .h-100;
-
+        @extend .d-flex, .flex-column, .align-items-center, .justify-content-start;
+        height:100%;
         .box{
             text-align: center;
-            height: 4.5rem;
+            height: 60%;
+            padding:0;
+            //margin-bottom: 2rem;
+            @extend .embed-responsive;
             img{
-                width:50%;
+                width:45%;
             }
         }
 
         .temperature{
-            @extend .text-white, .mt-1;
+            @extend .text-white;
+            padding-top:5%;
+            height: 20%;
         }
 
         .date{
-            @extend .mt-3, .text-white;
+            height: 20%;
+            padding-top:5%;
+            @extend .text-white;
         }
     }
 }
